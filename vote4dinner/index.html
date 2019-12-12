@@ -20,7 +20,50 @@
     <div id="app">React is messing up now fix it</div>
 
     <script type="text/babel">
+    class DinnerVote extends React.Component {
+        constructor (props){
+            super(props);
+            this.state = {
+                votes: 0
+            };
+        }
+        add(){
 
+        }
+        subtract(){
+            
+        }
+        render(){
+            var dinnerVoteStyle = {
+                display: "inline-block",
+                textAlign: "center",
+                margin: 20,
+                height: 500,
+                width: 300,
+                padding: 0,
+                backgroundColor: "#FFF",
+                WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+                filter: "drop-shadow(0px 0px 5px #555)"
+            }
+            var foodStyle = {
+                height: 200,
+                width: 200,
+                marginTop: 20
+
+            }
+            return(
+                <div style={dinnerVoteStyle}>
+                    <img src={this.props.img} alt="food image" style={foodStyle}/>
+                    <h1>Dinner Time</h1>
+                    <p>Vote Here If You Want This</p> 
+                    <button onClick={this.add}>+1</button>
+                    <p>Vote Here If You Do Not Want This</p>
+                    <button onClick={this.minus} >-1</button>
+                    <p>Total: {this.state.votes}</p>
+                </div>
+            );
+        }
+    }
      
         
         ReactDOM.render(
