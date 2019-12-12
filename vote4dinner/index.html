@@ -28,10 +28,14 @@
             };
         }
         add(){
-
+            this.setState({
+                votes: this.state.votes +1
+            })
         }
         subtract(){
-            
+            this.setState({
+                votes: this.state.votes - 1
+            })
         }
         render(){
             var dinnerVoteStyle = {
@@ -56,9 +60,9 @@
                     <img src={this.props.img} alt="food image" style={foodStyle}/>
                     <h1>Dinner Time</h1>
                     <p>Vote Here If You Want This</p> 
-                    <button onClick={this.add}>+1</button>
+                    <button onClick={() => this.add()}>+1</button>
                     <p>Vote Here If You Do Not Want This</p>
-                    <button onClick={this.minus} >-1</button>
+                    <button onClick={() => this.subtract()} >-1</button>
                     <p>Total: {this.state.votes}</p>
                 </div>
             );
